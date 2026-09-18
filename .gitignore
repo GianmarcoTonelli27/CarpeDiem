@@ -1,0 +1,10 @@
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# Cartella di lavoro del menù (zip WhatsApp + scansioni) — non fa parte del sito
+menu/
+
+# Dipendenze / build
+node_modules/
+.vercel

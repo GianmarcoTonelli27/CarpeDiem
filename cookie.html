@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cookie Policy — Carpe Diem Food & Lounge</title>
+<meta name="description" content="Informativa sui cookie del sito Carpe Diem Food & Lounge, Rovereto." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0d0d0e;--bg-2:#141416;--panel:#1a1a1d;--cream:#f4efe4;--muted:#9c968a;
+    --gold:#c6a15b;--gold-soft:#d8bd82;--line:rgba(198,161,91,.22);
+    --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --sans:'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-weight:300;line-height:1.7;letter-spacing:.02em;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+
+  nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;background:rgba(13,13,14,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06);}
+  .brand{font-family:var(--serif);font-size:1.35rem;letter-spacing:.14em;text-transform:uppercase;}
+  .brand span{color:var(--gold);}
+  .back{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:color .3s;}
+  .back:hover{color:var(--gold);}
+
+  .legal-header{text-align:center;padding:70px 24px 30px;}
+  .legal-header .eyebrow{font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+  .legal-header h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,6vw,3.6rem);line-height:1;}
+
+  .legal{max-width:760px;margin:0 auto;padding:20px 32px 80px;}
+  .legal .updated{color:#6f6a61;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px;}
+  .legal .note{border:1px solid var(--line);background:var(--bg-2);padding:18px 22px;border-radius:3px;color:var(--muted);font-size:.86rem;line-height:1.7;margin-bottom:36px;}
+  .legal h2{font-family:var(--serif);font-size:1.65rem;color:var(--cream);margin:36px 0 12px;}
+  .legal p,.legal li{color:var(--muted);font-size:.95rem;line-height:1.85;}
+  .legal ul{margin:10px 0 10px 20px;}
+  .legal li{margin-bottom:6px;}
+  .legal a{color:var(--gold);border-bottom:1px solid var(--line);}
+  .legal strong{color:var(--cream);font-weight:400;}
+  .legal .table-wrap{overflow-x:auto;margin:16px 0;}
+  .legal table{width:100%;border-collapse:collapse;font-size:.86rem;min-width:520px;}
+  .legal th,.legal td{text-align:left;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.08);color:var(--muted);vertical-align:top;line-height:1.6;}
+  .legal th{color:var(--gold);font-weight:400;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;}
+
+  footer{padding:46px 0 40px;text-align:center;border-top:1px solid rgba(255,255,255,.06);}
+  .footer-brand{font-family:var(--serif);font-size:1.35rem;letter-spacing:.16em;text-transform:uppercase;}
+  .footer-brand span{color:var(--gold);}
+  .footer-legal{margin-top:14px;color:#6f6a61;font-size:.72rem;letter-spacing:.04em;line-height:1.8;}
+  .footer-legal a{color:var(--muted);border-bottom:1px solid rgba(198,161,91,.25);}
+  .footer-legal a:hover{color:var(--gold);}
+
+  .ck-btn{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;padding:12px 26px;border-radius:2px;cursor:pointer;transition:all .3s ease;display:inline-block;text-align:center;}
+  .ck-accept{background:var(--gold);color:var(--bg);border:1px solid var(--gold);}
+  .ck-accept:hover{background:transparent;color:var(--gold);}
+  .ck-reject{background:transparent;color:var(--cream);border:1px solid var(--line);}
+  .ck-reject:hover{border-color:var(--gold);color:var(--gold);}
+  .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:400;display:none;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;padding:18px 30px;background:rgba(18,18,20,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line);}
+  .cookie-banner.show{display:flex;}
+  .cookie-banner p{color:var(--muted);font-size:.86rem;line-height:1.5;max-width:640px;margin:0;}
+  .cookie-banner p a{color:var(--gold);border-bottom:1px solid var(--line);}
+  .cookie-actions{display:flex;gap:12px;flex-shrink:0;}
+  .inline-btn{background:none;border:none;color:var(--gold);border-bottom:1px solid var(--line);cursor:pointer;font:inherit;padding:0;}
+
+  @media (max-width:680px){
+    nav{padding:16px 22px;}
+    .legal{padding:16px 22px 70px;}
+    .cookie-banner{padding:16px 20px;gap:14px;}
+    .cookie-actions{width:100%;}
+    .cookie-actions .ck-btn{flex:1;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Carpe <span>Diem</span></a>
+  <a href="index.html" class="back">← Torna al sito</a>
+</nav>
+
+<header class="legal-header">
+  <div class="eyebrow">Informativa</div>
+  <h1>Cookie Policy</h1>
+</header>
+
+<main class="legal">
+  <div class="updated">Ultimo aggiornamento: settembre 2026</div>
+
+  <div class="note">⚠️ <strong>Bozza da validare.</strong> Testo di base conforme alle indicazioni del Garante Privacy. Prima della pubblicazione definitiva fai verificare/completare il testo (o usa un generatore come iubenda o Cookiebot).</div>
+
+  <h2>Cosa sono i cookie</h2>
+  <p>I cookie sono piccoli file di testo che i siti salvano sul dispositivo dell'utente. Esistono cookie <strong>tecnici</strong> (necessari al funzionamento) e cookie/servizi di <strong>terze parti</strong> (che possono raccogliere dati per conto di altri fornitori). Oltre ai cookie, il sito usa la memoria locale del browser (<em>localStorage</em>) per ricordare le tue scelte.</p>
+
+  <h2>Cookie e strumenti utilizzati da questo sito</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Nome</th><th>Tipo</th><th>Finalità</th><th>Durata</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>cd_cookie_consent</strong></td>
+          <td>Tecnico (localStorage)</td>
+          <td>Ricorda la tua scelta sui cookie (accetta/rifiuta), così il banner non ricompare</td>
+          <td>Persistente, finché non svuoti i dati del browser</td>
+        </tr>
+        <tr>
+          <td><strong>Google Maps</strong></td>
+          <td>Terze parti (Google Ireland Ltd.)</td>
+          <td>Mostra la mappa interattiva della sede. <strong>Si attiva solo dopo il tuo consenso</strong></td>
+          <td>Gestita da Google</td>
+        </tr>
+        <tr>
+          <td><strong>Google Fonts</strong></td>
+          <td>Terze parti (Google Ireland Ltd.)</td>
+          <td>Caricamento dei caratteri tipografici del sito</td>
+          <td>Non imposta cookie; comporta una connessione ai server Google</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Gestione del consenso</h2>
+  <p>Al primo accesso viene mostrato un banner con cui puoi <strong>accettare</strong> o <strong>rifiutare</strong> i servizi di terze parti. Fino a quando non dai il consenso, la mappa di Google <strong>non viene caricata</strong>.</p>
+  <p>Puoi cambiare idea in qualsiasi momento: <button class="inline-btn" id="reopenInline">riapri le preferenze cookie</button> oppure usa il link "Preferenze cookie" nel fondo pagina.</p>
+
+  <h2>Disattivare i cookie dal browser</h2>
+  <p>Puoi gestire o eliminare i cookie anche dalle impostazioni del tuo browser:</p>
+  <ul>
+    <li>Google Chrome — Impostazioni › Privacy e sicurezza › Cookie</li>
+    <li>Safari — Preferenze › Privacy</li>
+    <li>Firefox — Impostazioni › Privacy e sicurezza</li>
+    <li>Microsoft Edge — Impostazioni › Cookie e autorizzazioni sito</li>
+  </ul>
+
+  <h2>Riferimenti</h2>
+  <p>Per maggiori informazioni sul trattamento dei dati vedi la nostra <a href="privacy.html">Privacy Policy</a>. Autorità di controllo: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+</main>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consenso cookie">
+  <p>Usiamo cookie di terze parti (Google Maps) per mostrarti la mappa. Dettagli in questa pagina.</p>
+  <div class="cookie-actions">
+    <button class="ck-btn ck-reject" id="cookieReject">Rifiuta</button>
+    <button class="ck-btn ck-accept" id="cookieAccept">Accetta</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">Carpe <span>Diem</span></div>
+  <div class="footer-legal">
+    <a href="privacy.html">Privacy Policy</a> · <a href="cookie.html">Cookie Policy</a> · <a href="#" id="cookieSettings">Preferenze cookie</a>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const KEY = 'cd_cookie_consent';
+    const banner = document.getElementById('cookieBanner');
+    if (!banner) return;
+    let choice = null;
+    try { choice = localStorage.getItem(KEY); } catch(e) {}
+    if (!choice) banner.classList.add('show');
+    function set(v){ try { localStorage.setItem(KEY, v); } catch(e) {} banner.classList.remove('show'); }
+    function show(e){ if(e) e.preventDefault(); banner.classList.add('show'); }
+    const acc = document.getElementById('cookieAccept');
+    const rej = document.getElementById('cookieReject');
+    const reopen = document.getElementById('cookieSettings');
+    const reopenInline = document.getElementById('reopenInline');
+    if (acc) acc.addEventListener('click', () => set('accept'));
+    if (rej) rej.addEventListener('click', () => set('reject'));
+    if (reopen) reopen.addEventListener('click', show);
+    if (reopenInline) reopenInline.addEventListener('click', show);
+  })();
+</script>
+
+</body>
+</html>

@@ -73,11 +73,29 @@
   .footer-brand span{color:var(--gold);}
   .footer-tag{color:var(--muted);font-size:.8rem;letter-spacing:.14em;margin-top:10px;}
 
+  /* COOKIE BANNER */
+  .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:400;display:none;
+    align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;
+    padding:18px 30px;background:rgba(18,18,20,.97);backdrop-filter:blur(12px);
+    border-top:1px solid var(--line);}
+  .cookie-banner.show{display:flex;}
+  .cookie-banner p{color:var(--muted);font-size:.86rem;line-height:1.5;max-width:640px;margin:0;}
+  .cookie-actions{display:flex;gap:12px;flex-shrink:0;}
+  .cookie-actions button{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+    padding:12px 26px;border-radius:2px;cursor:pointer;transition:all .3s ease;}
+  .ck-accept{background:var(--gold);color:var(--bg);border:1px solid var(--gold);}
+  .ck-accept:hover{background:transparent;color:var(--gold);}
+  .ck-reject{background:transparent;color:var(--cream);border:1px solid var(--line);}
+  .ck-reject:hover{border-color:var(--gold);color:var(--gold);}
+
   @media (max-width:680px){
     nav{padding:16px 22px;}
     .wrap{padding:0 22px;}
     .chips{top:55px;}
     .cat{scroll-margin-top:120px;}
+    .cookie-banner{padding:16px 20px;gap:14px;}
+    .cookie-actions{width:100%;}
+    .cookie-actions button{flex:1;}
   }
 </style>
 </head>
@@ -217,10 +235,33 @@
 
 </main>
 
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consenso cookie">
+  <p>Questo sito utilizza cookie e servizi di terze parti (Google Maps, Google Fonts) per mostrarti la mappa e i contenuti. Puoi accettarli o rifiutarli.</p>
+  <div class="cookie-actions">
+    <button class="ck-reject" id="cookieReject">Rifiuta</button>
+    <button class="ck-accept" id="cookieAccept">Accetta</button>
+  </div>
+</div>
+
 <footer>
   <div class="footer-brand">Carpe <span>Diem</span></div>
   <div class="footer-tag">Food &amp; Lounge · Aperitivi · Eventi — Rovereto</div>
 </footer>
+
+<script>
+  (function(){
+    const KEY = 'cd_cookie_consent';
+    const banner = document.getElementById('cookieBanner');
+    if (!banner) return;
+    let choice = null;
+    try { choice = localStorage.getItem(KEY); } catch(e) {}
+    if (!choice) banner.classList.add('show');
+    function set(v){ try { localStorage.setItem(KEY, v); } catch(e) {} banner.classList.remove('show'); }
+    document.getElementById('cookieAccept').addEventListener('click', () => set('accept'));
+    document.getElementById('cookieReject').addEventListener('click', () => set('reject'));
+  })();
+</script>
 
 </body>
 </html>
